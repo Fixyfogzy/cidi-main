@@ -88,7 +88,7 @@ body {
         }
 
         .nav-menu a:hover {
-            color: white;
+            color: whitesmoke;
         }
 
         .hamburger {
@@ -96,7 +96,7 @@ body {
             cursor: pointer;
             background: none;
             border: none;
-            color: #f8d568;
+            color: black;
             font-size: 1.8rem;
             position: absolute;
             right: 10px;
@@ -192,12 +192,13 @@ body {
                 top: 30px;
                 right: -100%;
                 flex-direction: column;
-                background-color: black;
+                background-color: whitesmoke;
                 width: 250px;
                 height: calc(100vh - 80px);
                 padding: 40px 20px;
                 transition: right 0.3s ease;
                 box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+                color: black;
             }
 
             .nav-menu.active {
@@ -221,6 +222,15 @@ body {
             left: 10px;
             top: 10px;
             }
+
+              header {
+            background: whitesmoke;
+        }
+
+         .nav-menu a:hover {
+            color: black;
+        }
+
         }
 
 /* Intro Section */
@@ -716,16 +726,6 @@ footer {
 
 
 /* Additional CSS for JavaScript enhancements */
-.fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.animate-in {
-    opacity: 1;
-    transform: translateY(0);
-}
 
 .back-to-top {
     position: fixed;
