@@ -59,3 +59,59 @@ function initGetInvolvedAnimations() {
     // Initialize scroll animations
     initScrollAnimations();
 }
+
+
+
+
+
+    document.getElementById('volunteerForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const form = e.target;
+            const formData = new FormData(form);
+            const submitButton = form.querySelector('button[type="submit"]');
+            const statusElement = document.getElementById('formStatus');
+            
+            // Change button text to show loading state
+            submitButton.textContent = 'Submitting...';
+            submitButton.disabled = true;
+            
+            try {
+                const response = await fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                if (response.ok) {
+                    // Show success message
+                    statusElement.style.display = 'block';
+                    statusElement.textContent = 'Thank you! Your application has been submitted successfully.';
+                    statusElement.className = 'form-status success';
+                    
+                    // Reset the form
+                    form.reset();
+                } else {
+                    const data = await response.json();
+                    if (data.errors) {
+                        throw new Error(data.errors.map(error => error.message).join(', '));
+                    } else {
+                        throw new Error('Oops! There was a problem submitting your form. Please try again.');
+                    }
+                }
+            } catch (error) {
+                // Show error message
+                statusElement.style.display = 'block';
+                statusElement.textContent = error.message || 'Oops! There was a problem submitting your form.';
+                statusElement.className = 'form-status error';
+            } finally {
+                // Reset button text
+                submitButton.textContent = 'Submit Application';
+                submitButton.disabled = false;
+                
+                // Scroll to status message
+                statusElement.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+        });

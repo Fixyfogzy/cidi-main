@@ -77,28 +77,28 @@
             </div>
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <img src="images/ED2.jpg" alt="Volunteers building a school">
+                    <img src="images/ED2.jpg" alt="Dally Adetoun">
                     <div class="gallery-caption">Dally Adetoun</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Medical volunteers">
-                    <div class="gallery-caption">Medical volunteers providing healthcare</div>
+                    <img src="images/v2.jpg" alt="Vivian O. Akanbi">
+                    <div class="gallery-caption">Mrs. Vivian O. Akanbi</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Teaching volunteers">
-                    <div class="gallery-caption">Teaching and mentoring students</div>
+                    <img src="images/v1.jpg" alt="Teaching volunteers">
+                    <div class="gallery-caption">Sport psychologist</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1559027615-c34c5ab25489?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="Environmental volunteers">
-                    <div class="gallery-caption">Environmental conservation efforts</div>
+                    <img src="images/v3.jpg" alt="Funmilayo Abayomi">
+                    <div class="gallery-caption">Pastor Funmilayo Abayomi</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1559027615-c34c5ab25489?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="Environmental volunteers">
-                    <div class="gallery-caption">Environmental conservation efforts</div>
+                    <img src="images/v4.jpg" alt="Joy Adeola Dikko">
+                    <div class="gallery-caption">Nurse Joy Adeola Dikko</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1559027615-c34c5ab25489?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="Environmental volunteers">
-                    <div class="gallery-caption">Environmental conservation efforts</div>
+                    <img src="images/v5.jpg" alt="Environmental volunteers">
+                    <div class="gallery-caption">Dr. Amina Batagarawa</div>
                 </div>
                 <div class="gallery-item">
                     <img src="https://images.unsplash.com/photo-1559027615-c34c5ab25489?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="Environmental volunteers">
@@ -191,13 +191,13 @@
                     </div>
                 </div>
                 <div class="form-wrapper">
-                    <form class="volunteer-form">
+                    <form id="volunteerForm" class="volunteer-form" action="https://formspree.io/f/mblablvg" method="POST">
                         <div class="form-group">
-                            <label for="fullname">Full Name *</label>
+                            <label for="fullname">Full Name <span class="required">*</span></label>
                             <input type="text" id="fullname" name="fullname" required>
                         </div>
                         <div class="form-group">
-                            <label for="email">Email Address *</label>
+                            <label for="email">Email Address <span class="required">*</span></label>
                             <input type="email" id="email" name="email" required>
                         </div>
                         <div class="form-group">
@@ -205,7 +205,7 @@
                             <input type="tel" id="phone" name="phone">
                         </div>
                         <div class="form-group">
-                            <label for="interest">Area of Interest *</label>
+                            <label for="interest">Area of Interest <span class="required">*</span></label>
                             <select id="interest" name="interest" required>
                                 <option value="">Select an area</option>
                                 <option value="education">Education Programs</option>
@@ -216,7 +216,7 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="availability">Availability *</label>
+                            <label for="availability">Availability <span class="required">*</span></label>
                             <select id="availability" name="availability" required>
                                 <option value="">Select availability</option>
                                 <option value="full-time">Full-time (40+ hours/week)</option>
@@ -226,10 +226,13 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="message">Why do you want to volunteer with us? *</label>
+                            <label for="message">Why do you want to volunteer with us? <span class="required">*</span></label>
                             <textarea id="message" name="message" rows="4" required></textarea>
                         </div>
                         <button type="submit" class="cta-button">Submit Application</button>
+                        
+                        <!-- Form status messages -->
+                        <div id="formStatus" class="form-status"></div>
                     </form>
                 </div>
             </div>
